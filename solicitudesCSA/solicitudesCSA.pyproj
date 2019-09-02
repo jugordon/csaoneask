@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>solicitudesCSA</Name>
+    <RootNamespace>solicitudesCSA</RootNamespace>
+    <InterpreterId>MSBuild|pyenv|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>885bd24b-630a-4ecc-ad3b-c466efe7f137</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>solicitudesCSA.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="csa\forms.py" />
+    <Compile Include="csa\models.py" />
+    <Compile Include="csa\tests.py" />
+    <Compile Include="csa\views.py" />
+    <Compile Include="csa\__init__.py" />
+    <Compile Include="csa\migrations\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="solicitudesCSA\__init__.py" />
+    <Compile Include="solicitudesCSA\settings.py" />
+    <Compile Include="solicitudesCSA\urls.py" />
+    <Compile Include="solicitudesCSA\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="csa\" />
+    <Folder Include="csa\migrations\" />
+    <Folder Include="csa\static\" />
+    <Folder Include="csa\static\csa\" />
+    <Folder Include="csa\static\csa\content\" />
+    <Folder Include="csa\static\csa\fonts\" />
+    <Folder Include="csa\static\csa\scripts\" />
+    <Folder Include="csa\templates\" />
+    <Folder Include="csa\templates\csa\" />
+    <Folder Include="solicitudesCSA\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="csa\static\csa\content\bootstrap.css" />
+    <Content Include="csa\static\csa\content\bootstrap.min.css" />
+    <Content Include="csa\static\csa\content\site.css" />
+    <Content Include="csa\static\csa\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="csa\static\csa\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="csa\static\csa\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="csa\static\csa\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="csa\static\csa\scripts\bootstrap.js" />
+    <Content Include="csa\static\csa\scripts\bootstrap.min.js" />
+    <Content Include="csa\static\csa\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="csa\static\csa\scripts\jquery-1.10.2.js" />
+    <Content Include="csa\static\csa\scripts\jquery-1.10.2.min.js" />
+    <Content Include="csa\static\csa\scripts\jquery-1.10.2.min.map" />
+    <Content Include="csa\static\csa\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="csa\static\csa\scripts\jquery.validate.js" />
+    <Content Include="csa\static\csa\scripts\jquery.validate.min.js" />
+    <Content Include="csa\static\csa\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="csa\static\csa\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="csa\static\csa\scripts\modernizr-2.6.2.js" />
+    <Content Include="csa\static\csa\scripts\respond.js" />
+    <Content Include="csa\static\csa\scripts\respond.min.js" />
+    <Content Include="csa\static\csa\scripts\_references.js" />
+    <Content Include="csa\templates\csa\about.html" />
+    <Content Include="csa\templates\csa\contact.html" />
+    <Content Include="csa\templates\csa\index.html" />
+    <Content Include="csa\templates\csa\layout.html" />
+    <Content Include="csa\templates\csa\login.html" />
+    <Content Include="csa\templates\csa\loginpartial.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="pyenv\">
+      <Id>pyenv</Id>
+      <Version>3.7</Version>
+      <Description>pyenv (Python 3.7 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
