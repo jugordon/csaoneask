@@ -56,6 +56,8 @@
     <Folder Include="solicitudesCSA\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="csa\templates\csa\footer.html" />
+    <Content Include="csa\templates\csa\header.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="csa\static\csa\content\bootstrap.css" />
