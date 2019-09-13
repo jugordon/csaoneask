@@ -33,6 +33,9 @@
   <ItemGroup>
     <Compile Include="csa\forms.py" />
     <Compile Include="csa\models.py" />
+    <Compile Include="csa\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="csa\tests.py" />
     <Compile Include="csa\views.py" />
     <Compile Include="csa\__init__.py" />
@@ -53,11 +56,14 @@
     <Folder Include="csa\static\csa\scripts\" />
     <Folder Include="csa\templates\" />
     <Folder Include="csa\templates\csa\" />
+    <Folder Include="csa\templates\email\" />
     <Folder Include="solicitudesCSA\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="csa\templates\csa\footer.html" />
     <Content Include="csa\templates\csa\header.html" />
+    <None Include="oneaskcsa - Web Deploy.pubxml" />
+    <Content Include="csa\templates\email\newRequestMessage.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="csa\static\csa\content\bootstrap.css" />
