@@ -108,6 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LANGUAGE_CODE = 'en-us'
@@ -120,3 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+#sendgrid
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY =  "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"
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
+
+#csa variables
+
+FROM_EMAIL_CSA = 'jugordon@microsoft.com'
+EMAIL_CSA_MANAGER = 'jugordon@microsoft.com'

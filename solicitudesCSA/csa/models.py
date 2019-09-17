@@ -44,9 +44,12 @@ AREA_CHOICES = [
 ]
 
 class CSAuser(models.Model):
-    first_name = models.CharField(max_length=30, verbose_name="First Name") 
+    first_name = models.CharField(max_length=30, verbose_name="First Name")
     last_name = models.CharField(max_length=30, verbose_name='Last name')
     alias = models.CharField(max_length=30, verbose_name='Alias')
+
+    def __str__(self):
+        return self.alias
 
 class workRequest(models.Model):
     alias = models.CharField(max_length=50,verbose_name="Your alias")
@@ -60,7 +63,7 @@ class workRequest(models.Model):
     request_category = models.CharField(max_length=50,choices=CATEGORY_CHOICES,default="")
     request_tech=models.CharField(max_length=50,choices=TECH_CHOICES,default="")
     request_date = models.DateField(default=timezone.now,verbose_name="Expected Start Date")
-    assigned_csa = models.ForeignKey(CSAuser, on_delete=models.CASCADE)
+    assigned_csa = models.ForeignKey(CSAuser,null=True, on_delete=models.CASCADE,default=1)
     
     def __str__(self):
         return self.request_title

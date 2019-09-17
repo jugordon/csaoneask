@@ -63,6 +63,7 @@
     <Content Include="csa\templates\csa\footer.html" />
     <Content Include="csa\templates\csa\header.html" />
     <None Include="oneaskcsa - Web Deploy.pubxml" />
+    <Content Include="csa\templates\email\base.html" />
     <Content Include="csa\templates\email\newRequestMessage.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
