@@ -130,5 +130,5 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 
 #csa variables
 
-FROM_EMAIL_CSA = 'jugordon@microsoft.com'
+FROM_EMAIL_CSA = 'noreply@oneaskcsa.azurewebsites.net'
 EMAIL_CSA_MANAGER = 'jugordon@microsoft.com'

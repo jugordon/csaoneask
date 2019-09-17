@@ -28,16 +28,22 @@ class RequestForm(forms.ModelForm):
             'request_date': DateInput(attrs={'class':'datepicker'}),
         }
 
-        def clean_alias(self):
-            alias = self.cleaned_data['alias']
-            if alias:
-                if len(alias) < 3:
-                    raise ValidationError('Minimum 3 Character required for alias')
-            return alias
-
-        def clean_engagement(self):
-            engagement = self.cleaned_data['engagement']
-            if engagement:
-                if len(engagement) < 7:
-                    raise ValidationError('Minimum 7 Character required')
-            return engagement
+        def clean(self): 
+  
+            # data from the form is fetched using super function 
+            super(PostForm, self).clean() 
+          
+            # extract the username and text field from the data 
+            alias = self.cleaned_data.get('alias') 
+            engagement = self.cleaned_data.get('engagement') 
+  
+            # conditions to be met for the username length 
+            if len(alias) < 3: 
+                self._errors['alias'] = self.error_class([ 
+                    'Minimum 3 characters required']) 
+            if len(engagement) <10: 
+                self._errors['engagement'] = self.error_class([ 
+                    'engagement ID Should Contain minimum 10 characters']) 
+  
+            # return any errors if found 
+            return self.cleaned_data 
