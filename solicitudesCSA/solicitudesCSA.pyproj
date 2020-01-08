@@ -5,6 +5,7 @@
     <Name>solicitudesCSA</Name>
     <RootNamespace>solicitudesCSA</RootNamespace>
     <InterpreterId>MSBuild|pyenv|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,6 +46,13 @@
     <Compile Include="solicitudesCSA\settings.py" />
     <Compile Include="solicitudesCSA\urls.py" />
     <Compile Include="solicitudesCSA\wsgi.py" />
+    <Compile Include="tests\admin.py" />
+    <Compile Include="tests\apps.py" />
+    <Compile Include="tests\migrations\__init__.py" />
+    <Compile Include="tests\models.py" />
+    <Compile Include="tests\tests.py" />
+    <Compile Include="tests\views.py" />
+    <Compile Include="tests\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="csa\" />
@@ -58,10 +66,15 @@
     <Folder Include="csa\templates\csa\" />
     <Folder Include="csa\templates\email\" />
     <Folder Include="solicitudesCSA\" />
+    <Folder Include="tests\" />
+    <Folder Include="tests\migrations\" />
+    <Folder Include="tests\templates\" />
+    <Folder Include="tests\templates\tests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="csa\templates\csa\footer.html" />
     <Content Include="csa\templates\csa\header.html" />
+    <Content Include="tests\templates\tests\index.html" />
     <None Include="oneaskcsa - Web Deploy.pubxml" />
     <Content Include="csa\templates\email\base.html" />
     <Content Include="csa\templates\email\newRequestMessage.html" />
