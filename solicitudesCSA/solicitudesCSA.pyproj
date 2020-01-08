@@ -74,8 +74,9 @@
   <ItemGroup>
     <Content Include="csa\templates\csa\footer.html" />
     <Content Include="csa\templates\csa\header.html" />
-    <Content Include="tests\templates\tests\index.html" />
     <None Include="oneaskcsa - Web Deploy.pubxml" />
+    <Content Include="tests\templates\tests\index.html" />
+    <Content Include="web.config" />
     <Content Include="csa\templates\email\base.html" />
     <Content Include="csa\templates\email\newRequestMessage.html" />
     <Content Include="requirements.txt" />
