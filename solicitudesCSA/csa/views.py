@@ -27,6 +27,12 @@ def send_new_request_email(request_alias, request_title, request_desc):
     print("email sent")
     return True
 
+def requestReceived(request):
+    return render(request, 'csa/requestReceived.html',         {
+            'title':'Thank you'
+        })
+
+
 def csarequest(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -44,7 +50,7 @@ def csarequest(request):
 
             send_new_request_email(request_alias,request_title,request_desc)
             # redirect to a new URL:
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/requestReceived')
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -54,6 +60,11 @@ def csarequest(request):
             'title':'Home Page',
             'year':datetime.now().year,
             'form':form,
+        })
+
+def dashboard(request):
+    return render(request, 'csa/dashboard.html',         {
+            'title':'Dashboard'
         })
 
 def contact(request):

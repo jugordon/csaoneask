@@ -11,6 +11,8 @@ from csa import forms, views
 
 urlpatterns = [
     path('', views.csarequest, name='csarequest'),
+    path('requestReceived/', views.requestReceived, name='requestReceived'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('contact/', views.contact, name='contact'),
     path('csarequest/', views.csarequest, name='csarequest'),
     path('about/', views.about, name='about'),

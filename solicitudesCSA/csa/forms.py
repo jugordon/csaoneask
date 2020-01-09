@@ -25,7 +25,7 @@ class RequestForm(forms.ModelForm):
         fields = ['alias', 'job_title','engagement','customer','customer_area','request_title','request_desc','request_date','request_category','request_tech']
         widgets = {
             'request_desc': Textarea(attrs={'cols': 10, 'rows': 5}),
-            'request_date': DateInput(attrs={'class':'datepicker'}),
+            'request_date': DateInput(attrs={'class':'form-control datepicker'}),
         }
 
         def clean(self): 
