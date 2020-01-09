@@ -1,5 +1,4 @@
-Django==2.2.8
-PyMySQL==0.9.3
+Django==3.0.2
 mysqlclient==1.4.6
 django-crispy-forms==1.7.2
 django-sendgrid-v5==0.8.0
