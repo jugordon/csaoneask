@@ -76,6 +76,7 @@
     <Content Include="csa\templates\csa\header.html" />
     <None Include="oneaskcsa - Web Deploy.pubxml" />
     <None Include="oneaskcsa2 - Web Deploy.pubxml" />
+    <Content Include="csa\templates\csa\menu.html" />
     <Content Include="tests\templates\tests\index.html" />
     <Content Include="web.config" />
     <Content Include="csa\templates\email\base.html" />
