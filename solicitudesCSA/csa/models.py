@@ -47,6 +47,7 @@ class CSAuser(models.Model):
     first_name = models.CharField(max_length=30, verbose_name="First Name")
     last_name = models.CharField(max_length=30, verbose_name='Last name')
     alias = models.CharField(max_length=30, verbose_name='Alias')
+    area = models.CharField(max_length=50,choices=CATEGORY_CHOICES,default="")
 
     def __str__(self):
         return self.alias
