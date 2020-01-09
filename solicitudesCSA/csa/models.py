@@ -26,13 +26,18 @@ CATEGORY_CHOICES = [
 
 TECH_CHOICES = [
     ('aks','AKS'),
-    ('bi', 'bBI'),
+    ('bi', 'BI'),
     ('bigdata','Big data (Databricks, HDI)'),
+    ('blockchain','Blockchain'),
+    ('container','Contenedores / Microservicios'),
     ('devops','DevOps'),
     ('dwh','Data warehouse'),
+    ('media','Media services / Video Indexer'),
+    ('hpc','HPC'),
     ('iot','IoT'),
     ('oss','Open Source'),
-    ('sql','Migración SQL')
+    ('sql','Migración SQL'),
+    ('sap','SAP on Azure')
 ]
 
 AREA_CHOICES = [
