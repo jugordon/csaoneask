@@ -25,18 +25,19 @@ CATEGORY_CHOICES = [
 ]
 
 TECH_CHOICES = [
-    ('aks','AKS'),
+    ('ml','Advanced Analytics / Machine learning'),
     ('bi', 'BI'),
     ('bigdata','Big data (Databricks, HDI)'),
     ('blockchain','Blockchain'),
-    ('container','Contenedores / Microservicios'),
+    ('containers','Containers ( AKS / Red Hat Open Shift)'),
     ('devops','DevOps'),
     ('dwh','Data warehouse'),
+    ('networking','Networking / Express Route'),
     ('media','Media services / Video Indexer'),
     ('hpc','HPC'),
     ('iot','IoT'),
     ('oss','Open Source'),
-    ('sql','Migración SQL'),
+    ('sql','SQL Server'),
     ('sap','SAP on Azure')
 ]
 
