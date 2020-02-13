@@ -43,6 +43,23 @@
             }, 1300);
 
 
+
+            $("#id_request_category").change(function () {
+              var url = "/ajax_load_techs";  // get the url of the `load_cities` view
+              var azurecategory_id = $(this).val();  // get the selected country ID from the HTML input
+
+              $.ajax({                       // initialize an AJAX request
+                url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+                data: {
+                  'azurecategory_id': azurecategory_id       // add the country id to the GET parameters
+                },
+                success: function (data) {   // `data` is the return of the `load_cities` view function
+                  $("#id_request_tech").html(data);  // replace the contents of the city input with the data that came from the server
+                }
+              });
+
+            });
+
             $(".datepicker").datepicker({
                 todayBtn: "linked",
                 keyboardNavigation: false,

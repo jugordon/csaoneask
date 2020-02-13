@@ -5,19 +5,28 @@ Definition of forms.
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
-from .models import workRequest
-from django.forms import Textarea,DateInput,TextInput
+from .models import workRequest,Customer
+from django.forms import Textarea,DateInput,TextInput,ModelChoiceField
+from dal import autocomplete
 
 class BootstrapAuthenticationForm(AuthenticationForm):
     """Authentication form which uses boostrap CSS."""
-    username = forms.CharField(max_length=254,
+    username = forms.CharField(max_length=50,min_length=3,
                                widget=forms.TextInput({
                                    'class': 'form-control',
                                    'placeholder': 'User name'}))
-    password = forms.CharField(label=_("Password"),
+    password = forms.CharField(max_length=50,min_length=5,label=_("Password"),
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
+
+    def clean(self):
+        cleaned_data = super().clean()
+        username = cleaned_data.get("username")
+        password = cleaned_data.get("password")
+        if len(username) < 3: 
+            self.add_error('username', 'username should be at least 3 characters')
+
 
 class RequestForm(forms.ModelForm):
     class Meta:
@@ -27,6 +36,10 @@ class RequestForm(forms.ModelForm):
             'request_desc': Textarea(attrs={'cols': 10, 'rows': 5}),
             'request_date': DateInput(attrs={'class':'form-control datepicker'}),
         }
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['request_tech'].queryset = AzureTechnology.objects.none()
 
         def clean(self): 
   

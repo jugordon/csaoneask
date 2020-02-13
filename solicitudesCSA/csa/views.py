@@ -3,18 +3,23 @@ Definition of views.
 """
 
 from datetime import datetime
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpRequest,HttpResponse,HttpResponseRedirect
-from .forms import RequestForm
+from .forms import RequestForm,BootstrapAuthenticationForm
+from .models import workRequest,Customer,AzureTechnology
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import get_template
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 def send_new_request_email(request_alias, request_title, request_desc):
     template = get_template('email/newRequestMessage.html')
     to_email = settings.EMAIL_CSA_MANAGER
     from_email = settings.FROM_EMAIL_CSA
-    email_subject = 'New Request '+ request_title
+    email_subject = 'New Request : '+ request_title
 
     context = {
 	    'name' : request_title,
@@ -27,6 +32,11 @@ def send_new_request_email(request_alias, request_title, request_desc):
     print("email sent")
     return True
 
+def load_techs(request):
+    azurecategory_id = request.GET.get('azurecategory_id')
+    techs = AzureTechnology.objects.filter(azureCategory=azurecategory_id).order_by('name')
+    return render(request, 'csa/techOptions.html', {'techs': techs})
+
 def requestReceived(request):
     return render(request, 'csa/requestReceived.html',         {
             'title':'Thank you'
@@ -34,7 +44,13 @@ def requestReceived(request):
 
 
 def csarequest(request):
+    #user = User.objects.create_user('usuarioprueba', 'prueba@microsoft.com', 'usuarioprueba')
+    print(request.user.is_authenticated)
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
     # if this is a POST request we need to process the form data
+
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = RequestForm(request.POST)
@@ -65,6 +81,11 @@ def csarequest(request):
 def dashboard(request):
     return render(request, 'csa/dashboard.html',         {
             'title':'Dashboard'
+        })
+
+def view404(request):
+    return render(request, 'csa/404.html',         {
+            'title':'404 error'
         })
 
 def contact(request):

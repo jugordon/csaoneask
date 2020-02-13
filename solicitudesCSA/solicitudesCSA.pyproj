@@ -1875,6 +1875,7 @@
     <Content Include="csa\static\csa\js\plugins\video\responsible-video.js" />
     <Content Include="csa\static\csa\js\plugins\wow\wow.min.js" />
     <Content Include="csa\static\csa\js\popper.min.js" />
+    <Content Include="csa\templates\csa\404.html" />
     <Content Include="csa\templates\csa\dashboard.html" />
     <Content Include="csa\templates\csa\footer.html" />
     <Content Include="csa\templates\csa\footer_dashboard.html" />
@@ -1883,6 +1884,8 @@
     <None Include="oneaskcsa2 - Web Deploy.pubxml" />
     <Content Include="csa\templates\csa\requestReceived.html" />
     <Content Include="csa\templates\csa\menu.html" />
+    <Content Include="csa\templates\csa\techOptions.html" />
+    <Content Include="csa\templates\email\newAssignmentNotification.html" />
     <Content Include="tests\templates\tests\index.html" />
     <Content Include="web.config" />
     <Content Include="csa\templates\email\base.html" />

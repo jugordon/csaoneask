@@ -3,3 +3,4 @@ mysqlclient==1.4.6
 django-crispy-forms==1.8.1
 django-sendgrid-v5==0.8.0
 pytz==2019.2
+django-autocomplete-light
