@@ -127,11 +127,10 @@ STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 #sendgrid
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-#SENDGRID_API_KEY =  "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"
 SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 
 #sendgrid
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = ""
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
